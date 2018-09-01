@@ -662,7 +662,9 @@ VOID CGameProcess::AutoTargeting()
 			if ( bLastDir < 4 )		bInvDir = bLastDir + 4;
 			else					bInvDir = bLastDir - 4;
 
-			for ( INT nCnt = 0; nCnt < _MAX_DIRECTION; nCnt++ )
+			INT nCnt;
+
+			for ( nCnt = 0; nCnt < _MAX_DIRECTION; nCnt++ )
 			{
 				if ( m_xMap.GetNextTileCanMove(m_xMyHero.m_wPosX, m_xMyHero.m_wPosY, nCnt, 1, &ptTargetTile) )
 				{
@@ -1167,12 +1169,15 @@ VOID CGameProcess::RenderObject(INT nLoopTime)
 	BOOL bBlend	  = FALSE;
 	BOOL bDrawShadow = TRUE;
 
+	INT nYCnt;
+	INT nXCnt;
+
 	m_xMap.SetAniTileFrame(nLoopTime);
 
 // 48*32 타일형 오브젝트 그리기.
-	for ( INT nYCnt = m_xMap.m_shStartViewTileY-4; nYCnt < m_xMap.m_shStartViewTileY+_VIEW_CELL_Y_COUNT+6; nYCnt++ )
+	for ( nYCnt = m_xMap.m_shStartViewTileY-4; nYCnt < m_xMap.m_shStartViewTileY+_VIEW_CELL_Y_COUNT+6; nYCnt++ )
 	{
-		for ( INT nXCnt = m_xMap.m_shStartViewTileX-4; nXCnt < m_xMap.m_shStartViewTileX+_VIEW_CELL_X_COUNT+6; nXCnt++ )
+		for ( nXCnt = m_xMap.m_shStartViewTileX-4; nXCnt < m_xMap.m_shStartViewTileX+_VIEW_CELL_X_COUNT+6; nXCnt++ )
 		{
 			if ( nYCnt >= m_xMap.m_stMapFileHeader.shHeight )
 				break;

@@ -16,7 +16,8 @@ VOID CLightFog::Init(DWORD dwLightColor)
 {
 	m_dwLightColor = dwLightColor;
 
-	for ( INT nCntY = 0; nCntY < (NUM_CNTY_LIGHTTILE+1); nCntY++ )
+	INT nCntY;
+	for ( nCntY = 0; nCntY < (NUM_CNTY_LIGHTTILE+1); nCntY++ )
 	{
 		for ( INT nCntX = 0; nCntX < (NUM_CNTX_LIGHTTILE+1); nCntX++ )
 		{

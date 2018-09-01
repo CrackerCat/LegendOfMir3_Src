@@ -180,7 +180,9 @@ VOID CImageHandler::LoadAllImage(BOOL bIsMemMapped, BOOL bComp)
 
 VOID CImageHandler::InitAllImage()
 {
-	for ( INT nCnt = 0; nCnt < _MAX_IMAGE; nCnt++ )
+	INT nCnt;
+
+	for ( nCnt = 0; nCnt < _MAX_IMAGE; nCnt++ )
 		m_xImageList[nCnt].Init();
 
 	ZeroMemory(m_nLoadedMagic, sizeof(INT)*_MAX_MAGIC);

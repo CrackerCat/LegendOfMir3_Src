@@ -63,7 +63,8 @@ template <class T> int CWHDynamicArray<T>::GetAvailablePosition()
 	if (m_IsAvElements[nIndex] == FALSE)
 		return nIndex;
 
-	for (int i = m_nLastInsertIndex; i < _MAX_USER_ARRAY; i++)
+	int i;
+	for (i = m_nLastInsertIndex; i < _MAX_USER_ARRAY; i++)
 	{
 		if (m_IsAvElements[i] == FALSE)
 			return i;

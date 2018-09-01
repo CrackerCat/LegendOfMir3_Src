@@ -414,7 +414,8 @@ VOID CRain::LoadTextr()
 		"RainDrop3.bmp",
 		"RainDrop4.bmp",
 	};
-	for ( INT nCnt = 0; nCnt < _MAX_RAINFRAME; nCnt++ )
+	INT nCnt;
+	for ( nCnt = 0; nCnt < _MAX_RAINFRAME; nCnt++ )
 	{
 		strcpy(m_pszRainFile[nCnt], szFileList1[nCnt]);
 		D3DTextr_CreateTextureFromFile(m_pszRainFile[nCnt]);
@@ -444,7 +445,8 @@ VOID CRain::DestroySystem()
 {
 	CParticleSystem::DestroySystem();
 
-	for ( INT nCnt = 0; nCnt < _MAX_RAINFRAME; nCnt++ )
+	INT nCnt;
+	for ( nCnt = 0; nCnt < _MAX_RAINFRAME; nCnt++ )
 	{
 		D3DTextr_Invalidate(m_pszRainFile[nCnt]);
 		D3DTextr_DestroyTexture(m_pszRainFile[nCnt]);
@@ -1712,9 +1714,10 @@ VOID CElec::LoadTextr()
 
 VOID CElec::SetupElec()
 {
+	INT nCntY;
 	D3DVECTOR vNorm(0, 0, -1);
 
-	for ( INT nCntY = 0; nCntY < (_MAX_ELEC_NODEY+1); nCntY++ )
+	for ( nCntY = 0; nCntY < (_MAX_ELEC_NODEY+1); nCntY++ )
 	{
 		for ( INT nCntX = 0; nCntX < (_MAX_ELEC_NODEX+1); nCntX++ )
 		{

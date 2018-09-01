@@ -357,7 +357,9 @@ BOOL CMirMsgBox::RenderMessageBox(INT nLoopTIme)							// Render Function
 			}
 		}
 
-		for(int i = 0 ; i < nCount ; i++)
+		int i;
+
+		for(i = 0 ; i < nCount ; i++)
 		{
 			g_xMainWnd.PutsHan(NULL,xTxtPos.x,m_xBoxPos.y+xTxtPos.y,RGB(255,255,255),RGB(0,0,0),*m_xMsg.GetCurrentData());
 			xTxtPos.y = xTxtPos.y + 16;
